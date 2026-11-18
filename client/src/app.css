@@ -1,0 +1,84 @@
+:root {
+  --bg: #14100c;
+  --panel: #1f1913;
+  --panel2: #2a221a;
+  --border: #3d3226;
+  --text: #f3ead9;
+  --muted: #a8977f;
+  --accent: #e8762d;
+  --accent2: #f4b942;
+  --green: #6fbf73;
+  --red: #e05c5c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--accent2); text-decoration: none; }
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--panel2);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+button.danger { background: transparent; border-color: var(--red); color: var(--red); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button.small { padding: 4px 10px; font-size: 0.85rem; }
+
+input, select, textarea {
+  font: inherit;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 10px;
+  width: 100%;
+}
+input:focus, select:focus { outline: none; border-color: var(--accent); }
+
+label { display: block; font-size: 0.85rem; color: var(--muted); margin: 10px 0 4px; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.badge.pendiente { background: #4a3b1e; color: var(--accent2); }
+.badge.preparando { background: #274a6b; color: #7db4e8; }
+.badge.listo { background: #2c5c33; color: var(--green); }
+.badge.entregado { background: #333; color: var(--muted); }
+.badge.cancelado { background: #5c2727; color: var(--red); }
+
+.error { color: var(--red); margin: 10px 0; }
+.muted { color: var(--muted); }
+.row { display: flex; gap: 12px; align-items: center; }
+.spread { justify-content: space-between; }
+.grid { display: grid; gap: 16px; }
+.grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.grid.cols-4 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
