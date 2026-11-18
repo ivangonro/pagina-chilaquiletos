@@ -5,9 +5,9 @@ export function setToken(t) {
   if (t) localStorage.setItem('token', t);
   else localStorage.removeItem('token');
 }
-
+const API_BASE = import.meta.env.VITE_API_URL || '';
 export async function api(path, { method = 'GET', body } = {}) {
-  const res = await fetch(`/api${path}`, {
+  const res = await fetch(`${API_BASE}/api${path}`, {
     method,
     headers: {
       'Content-Type': 'application/json',
